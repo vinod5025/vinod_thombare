@@ -1,0 +1,47 @@
+<%- include("navbar.ejs") %>
+<form action="/admin/update_myself_information" method="post">
+    <div class="container p-4 bg-white border shadow">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <h3 class="heading">MySelf Contact</h3>
+            </div>
+            <div class="col-md-6 mt-3">
+                <b class="text-success"> Description : </b>
+                <textarea type="text" name="description" class="form-control" rows="1"><%=contact_myself.description%></textarea>
+            </div>
+            <div class="col-md-6 mt-3">
+                <b class="text-success">Address : </b>
+                <textarea type="text" name="location" class="form-control" rows="1"><%=contact_myself.location%></textarea>
+            </div>
+            <div class="col-lg-3 mt-3">
+                <b class="text-success">Mobile :</b>
+                <input type="number" name="mobile" class="form-control" value="<%=contact_myself.mobile%>">
+            </div>
+            <div class="col-lg-3 mt-3">
+                <b class="text-success">Email :</b>
+                <input type="email" name="email" class="form-control" value="<%=contact_myself.email%>">
+            </div>
+            <div class="col-lg-3 mt-3">
+                <b class="text-success">Facebook Link :</b>
+                <input type="text" name="facebook_link" class="form-control" value="<%=contact_myself.facebook_link%>">
+            </div>
+            <div class="col-lg-3 mt-3">
+                <b class="text-success">Instagram Link :</b>
+                <input type="text" name="instagram_id" class="form-control" value="<%=contact_myself.instagram_id%>">
+            </div>
+            <div class="col-lg-3 mt-3">
+                <b class="text-success">WhatsApp Link :</b>
+                <input type="text" name="whatsapp_link" class="form-control" value="<%=contact_myself.whatsapp_link%>">
+            </div>
+            <div class="col-lg-3 mt-3">
+                <b class="text-success">LinkedIn Link :</b>
+                <input type="text" name="linked_in_link" class="form-control" value="<%=contact_myself.linked_in_link%>">
+            </div>
+            <div class="col-md-6 mt-3 text-center">
+                <br>
+                <button class="btn btn-primary">Save Contact Information</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include("footer.ejs") %>

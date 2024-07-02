@@ -1,0 +1,767 @@
+<%- include("navbar.ejs") %>
+  <!-- ======= Hero Section ======= -->
+  <div id="hero" class="hero route bg-image" style="background-image:url('/uploads/<%=home.backgound_image%>')" width="100%">
+    <div class="overlay-itro"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!--<p class="display-6 color-d">Hello, world!</p>-->
+          <h1 class="hero-title mb-4">I am <%=home.user_name%></h1>
+          <p class="hero-subtitle"><span class="typed" data-typed-items="<%=home.position_1%>,  <%=home.position_2%>, <%=home.position_3%>"></span></p>
+          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div><!-- End Hero Section -->
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                      <div class="about-img">
+                        <img src="/uploads/<%=about.profile_photo%>" class="img-fluid rounded b-shadow-a" width="100%">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7">
+                      <div class="about-info">
+                        <p><span class="title-s">Name: </span> <span><%=about.profile_name%></span></p>
+                        <p><span class="title-s">Profile: </span> <span><%=about.profile_position%></span></p>
+                        <p><span class="title-s">Email: </span> <span><%=about.profile_email%></span></p>
+                        <p><span class="title-s">Phone: </span> <span> + 91<%=about.profile_phone%></span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-mf">
+                    <p class="title-s">Skill</p>
+                    <span>HTML</span> <span class="pull-right"><%=about.skill_persentage_html%></span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width:<%=about.skill_persentage_html%>;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>CSS3</span> <span class="pull-right"><%=about.skill_persentage_css%></span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: <%=about.skill_persentage_css%>" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>Bootstrap</span> <span class="pull-right"><%=about.skill_persentage_bootstrap%></span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: <%=about.skill_persentage_bootstrap%>" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>JAVASCRIPT</span> <span class="pull-right"><%=about.skill_persentage_javascript%></span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: <%=about.skill_persentage_javascript%>" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>Jquery</span> <span class="pull-right"><%=about.skill_persentage_jquery%></span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: <%=about.skill_persentage_jquery%>" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>Angular</span> <span class="pull-right"><%=about.skill_persentage_angular%></span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: <%=about.skill_persentage_angular%>" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>Ionic</span> <span class="pull-right"><%=about.skill_persentage_ionic%></span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: <%=about.skill_persentage_ionic%>" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>Nodejs</span> <span class="pull-right"><%=about.skill_persentage_node_express%></span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: <%=about.skill_persentage_node_express%>" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>Mysql</span> <span class="pull-right"><%=about.skill_persentage_bootstrap%></span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: <%=about.skill_persentage_mysql%>" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="about-me pt-4 pt-md-0">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        About me
+                      </h5>
+                    </div>
+                    <p class="lead text-justify-cnter">
+                      <%=about.profile_user_desc%>
+                    </p>
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section (project section) ======= -->
+    <section id="services" class="services-mf pt-5 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Projects
+              </h3>
+              <p class="subtitle-a">
+               <%=project.project_page_description%>
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 " >
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><a href="<%=project.project_link_1%>" target="_blank">Get Link</a></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title"><%=project.project_name_1%></h2>
+                <p class="s-description text-center">
+              <%=project.project_desc_1%>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><a href="<%=project.project_link_2%>" target="_blank" >Get Link</a></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title"><%=project.project_name_2%></h2>
+                <p class="s-description text-center">
+                  <%=project.project_desc_2%>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><a href="<%=project.project_link_3%>" target="_blank">Get Link</a></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title"><%=project.project_name_3%></h2>
+                <p class="s-description text-center">
+                  <%=project.project_desc_3%>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-binoculars"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Responsive Design</h2>
+                <p class="s-description text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
+                  provident vitae! Magni
+                  tempora perferendis eum non provident.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-brightness-high"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Graphic Design</h2>
+                <p class="s-description text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
+                  provident vitae! Magni
+                  tempora perferendis eum non provident.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="bi bi-calendar4-week"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Marketing Services</h2>
+                <p class="s-description text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat! Quia,
+                  provident vitae! Magni
+                  tempora perferendis eum non provident.
+                </p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Counter Section ======= -->
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(/user/img/counters-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-sm-4 col-lg-3" > 
+            <div class="counter-box counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-check"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="<%=count.project_count%>" data-purecounter-duration="2" class="counter purecounter"></p>
+                <span class="counter-text">PROJECT COMPLETED</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="<%=count.expe_count%>" data-purecounter-duration="1" class="counter purecounter"></p>
+                <span class="counter-text">YEARS OF EXPERIENCE</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-people"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="<%=count.clients_count%>" data-purecounter-duration="2" class="counter purecounter"></p>
+                <span class="counter-text">TOTAL CLIENTS</span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-award"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0" data-purecounter-end="48" data-purecounter-duration="1" class="counter purecounter"></p>
+                <span class="counter-text">AWARD WON</span>
+              </div> -->
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div><!-- End Counter Section -->
+    <!-- ======= Certificate Section ======= -->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Certificate
+              </h3>
+              <p class="subtitle-a">
+                <%=certificate.certi_desc%>
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_1%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_1%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_1%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_1.toISOString().slice(0,10).split("-").reverse().join("-")%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_2%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_2%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_2%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_2.toISOString().slice(0,10).split("-").reverse().join("-")%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_3%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_3%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_3%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_3.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_4%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_4%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_4%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_4.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_5%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_5%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_5%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_5.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_6%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_6%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_6%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_6.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_7%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_7%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_7%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_7.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_8%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_8%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_8%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_8.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_9%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_9%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-9">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_9%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_9.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_10%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_10%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_10%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_10.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_11%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_11%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_11%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_11.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="/uploads/<%=certificate.certificate_photo_12%>" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="/uploads/<%=certificate.certificate_photo_12%>" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title fw-bold"><%=certificate.certificate_name_12%></h2>
+                    <div class="w-more">
+                      <span class="w-ctegory"></span>  <span class="w-date " style="font-style: italic; font-weight:bold"><%=certificate.certificate_date_12.toISOString().slice(0,10).split("-").reverse().join("-")%>%></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Certificate Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <div class="testimonials paralax-mf bg-image" style="background-image: url(/user/img/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="testimonial-box">
+                    <div class="author-test">
+                      <img src="/uploads/<%=client_list.client_photo_1%>" width="200px" class="rounded-circle b-shadow-a">
+                      <span class="author"><%=client_list.client_name_1%></span>
+                    </div>
+                    <div class="content-test">
+                      <p class="description lead">
+                        <%=client_list.client_inform_1%>
+                      </p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                  <div class="testimonial-box">
+                    <div class="author-test">
+                      <img src="/uploads/<%=client_list.client_photo_2%>" width="200px" class="rounded-circle b-shadow-a">
+                      <span class="author"><%=client_list.client_name_2%></span>
+                    </div>
+                    <div class="content-test">
+                      <p class="description lead">
+                        <%=client_list.client_inform_2%>
+                      </p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- <div id="testimonial-mf" class="owl-carousel owl-theme">
+          
+        </div> -->
+          </div>
+        </div>
+      </div>
+    </div><!-- End Testimonials Section -->
+
+    <!-- ======= Blog Section ======= -->
+    <!-- <section id="blog" class="blog-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Blog
+              </h3>
+              <p class="subtitle-a">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="/user/img/post-1.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">Travel</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
+                <p class="card-description">
+                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
+                  a pellentesque nec,
+                  egestas non nisi.
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  <a href="#">
+                    <img src="/user/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
+                    <span class="author">Morgan Freeman</span>
+                  </a>
+                </div>
+                <div class="post-date">
+                  <span class="bi bi-clock"></span> 10 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="/user/img/post-2.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category"></h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
+                <p class="card-description">
+                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
+                  a pellentesque nec,
+                  egestas non nisi.
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  <a href="#">
+                    <img src="/user/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
+                    <span class="author">Morgan Freeman</span>
+                  </a>
+                </div>
+                <div class="post-date">
+                  <span class="bi bi-clock"></span> 10 min
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="blog-single.html"><img src="/user/img/post-3.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category"></h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
+                <p class="card-description">
+                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
+                  a pellentesque nec,
+                  egestas non nisi.
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  <a href="#">
+                    <img src="/user/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
+                    <span class="author">Morgan Freeman</span>
+                  </a>
+                </div>
+                <div class="post-date">
+                  <span class="bi bi-clock"></span> 10 min
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End Blog Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(/user/img/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div id="contact" class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        Contact us now !
+                      </h5>
+                    </div>
+                    <div>
+                      <form action="/contact_now" method="post" role="form" >
+                        <div class="row">
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="number" class="form-control" name="mobile" placeholder="Your Mobile" required>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                              <input type="hidden" name="date">
+                              <input type="hidden" name="inquiry_id">
+                            </div>
+                          </div>
+                          <div class="col-md-12 text-center my-3">
+                            <div class="error-message"></div>
+                            <div class="sent-message" ></div>
+                          </div>
+                          <div class="col-md-12 text-center">
+                            <button  class="button button-a button-big button-rouded" >Send Message</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="title-box-2 pt-4 pt-md-0">
+                      <h5 class="title-left">
+                        Get in Touch
+                      </h5>
+                    </div>
+                    <div class="more-info">
+                      <p class="lead">
+                       <%=contact_self.description%>
+                      </p>
+                      <ul class="list-ico">
+                        <li><span class="bi bi-geo-alt"></span>  <%=contact_self.location%></li>
+                        <li><span class="bi bi-phone"></span>  +91 <%=contact_self.mobile%></li>
+                        <li><span class="bi bi-envelope"></span>  <%=contact_self.email%></li>
+                      </ul>
+                    </div>
+                    <div class="socials">
+                      <ul>
+                        <li><a target="_blank" href="<%=contact_self.facebook_link%>"><span class="ico-circle"><i class="bi bi-facebook"></i></span></a></li>
+                        <li><a target="_blank" href="<%=contact_self.instagram_id%>"><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
+                        <li><a target="_blank" href="<%=contact_self.whatsapp_link%>"><span class="ico-circle"><i class="bi bi-whatsapp"></i></span></a></li>
+                        <li><a target="_blank" href="<%=contact_self.linked_in_link%>"><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+<%- include("footer.ejs") %>
+<script>
+//   function send_msg()
+//   {
+//     alert("Your Details has Been Sent. Thank You !")
+//   }
+// </script>
+

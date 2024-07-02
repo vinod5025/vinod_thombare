@@ -1,0 +1,37 @@
+<%- include("navbar.ejs") %>
+<form action="/admin/update_home_page" method="post" enctype="multipart/form-data">
+    <div class="container  p-4 bg-white border shadow">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="heading">Edit Home Page</h3>
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter User Name In Short :
+                <input type="text" name="user_name_in_short"  class="form-control" value="<%=home.user_name_in_short%>">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter User Name :
+                <input type="text" name="user_name"  class="form-control"  value="<%=home.user_name%>">
+            </div>
+                <div class="col-md-6 mt-3">
+                Edit Background Image : 
+                <input type="file" name="backgound_image"  accept="image/*" class="form-control" required>
+            </div>
+            <div class="col-md-6 mt-3">
+                <img src="/uploads/<%=home.backgound_image%>" width="100px">
+            </div>
+            <div class="col-md-6 text-justify-center mt-3">
+                Enter Developer Position : 
+                <input type="" name="position_1"  class="form-control" value="<%=home.position_1%>" ><br>
+                <input type="" name="position_2"  class="form-control" value="<%=home.position_2%>"><br>
+                <input type="" name="position_3"  class="form-control" value="<%=home.position_3%>"><br>
+            </div>
+            <div class="col-md-6 mt-3 text-center">
+                <br><br>
+                <br><br>
+                <button class="btn btn-primary">Update Home Page</button>
+            </div>
+        </div>
+    </div>
+</form>
+<%- include("footer.ejs") %>
