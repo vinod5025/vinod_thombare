@@ -1,40 +1,44 @@
 <%- include("navbar.ejs") %>
-<div class="container p-4 bg-white border shadow">
+<div class="container-fluid p-4 bg-white card table-responsive ">
     <div class="row">
         <div class="col-md-12 mt-3">
-            <h3 class="heading">Contact Me List</h3>
+            <h3 class="heading">Who Has Conntected With Me</h3>
+            <hr>
             <br>
-           <table class="table-sm  table">
-            <tr>
-                <th>Action</th>
-                <th>Sr.No.</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Mobile</th>
-                <th>Subject</th>
-                <th>Message</th>
-                <th>Date</th>
-            </tr>
-            <% for(i=0;i<contact.length;i++){%>
+            <table class="table-sm table table-hover  shadow bg-white">
+                <tr>
+                    <th>Action</th>
+                    <th>Sr.No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+                <% for(i = 0; i < contact.length; i++) { %>
                 <tr>
                     <td>
-                        <a href="/admin/delete_contact_inquiry/<%=contact[i].user_id%>">
-                            <button class="btn btn-danger p-2 m-2">
+                        <a href="/admin/delete_contact_inquiry/<%= contact[i].user_id %>">
+                            <button class="btn btn-danger p-2 m-2" onclick="return confirm('Are You Sure...!')">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </a>
                     </td>
-                    <td style="vertical-align: middle;"><%=i+1%></td>
-                    <td style="vertical-align: middle;"><%=contact[i].name%></td>
-                    <td style="vertical-align: middle;"><%=contact[i].email%></td>
-                    <td style="vertical-align: middle;">+91 <%=contact[i].mobile%></td>
-                    <td style="vertical-align: middle;"><%=contact[i].subject%></td>
-                    <td style="vertical-align: middle;"><%=contact[i].message%></td>
-                    <td style="vertical-align: middle;"><%=contact[i].date%></td>
+                    <td style="vertical-align: middle;"><%= i + 1 %></td>
+                    <td style="vertical-align: middle;"><%= contact[i].name %></td>
+                    <td style="vertical-align: middle;"><%= contact[i].email %></td>
+                    <td style="vertical-align: middle;">+91 <%= contact[i].mobile %></td>
+                    <td style="vertical-align: middle;"><%= contact[i].subject %></td>
+                    <td style="vertical-align: middle;"><%= contact[i].message %></td>
+                    <td style="vertical-align: middle;"><%= contact[i].date %></td>
+                    <td style="vertical-align: middle;"><%= contact[i].time %></td> <!-- Display Time -->
                 </tr>
                 <% } %>
-           </table>
+            </table>
         </div>
     </div>
 </div>
+
 <%- include("footer.ejs") %>

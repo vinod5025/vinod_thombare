@@ -1,0 +1,25 @@
+<%- include('navbar.ejs'); %>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 card shadow-lg p-4">
+            <h3 class="text-center text-gradient heading">Update Your Skills</h3>
+<hr>
+            <form action="/admin/update_skill/<%=skills.id%>" method="post">
+                <div class="row">
+                    <div class="col-lg-6 mt-3">
+                        <label class="fw-bold">Tech Name:</label>
+                        <input type="text" value="<%=skills.tech_name%>" name="tech_name" class="form-control border-primary rounded-pill ">
+                    </div>
+                    <div class="col-lg-6 mt-3">
+                        <label class="fw-bold">Tech Range:</label>
+                        <input type="number" value="<%=skills.tech_range%>" name="tech_range" min="0" max="100" class="form-control border-primary rounded-pill ">
+                    </div>
+                    <div class="col-12 text-center mt-4">
+                        <button class="btn btn-primary  rounded-pill">Update Skill</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs'); %>

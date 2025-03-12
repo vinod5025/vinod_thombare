@@ -1,37 +1,58 @@
 <%- include("navbar.ejs") %>
-<form action="/admin/update_home_page" method="post" enctype="multipart/form-data">
-    <div class="container  p-4 bg-white border shadow">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="heading">Edit Home Page</h3>
-            </div>
-            <div class="col-md-6 mt-3">
-                Enter User Name In Short :
-                <input type="text" name="user_name_in_short"  class="form-control" value="<%=home.user_name_in_short%>">
-            </div>
-            <div class="col-md-6 mt-3">
-                Enter User Name :
-                <input type="text" name="user_name"  class="form-control"  value="<%=home.user_name%>">
-            </div>
-                <div class="col-md-6 mt-3">
-                Edit Background Image : 
-                <input type="file" name="backgound_image"  accept="image/*" class="form-control" >
-            </div>
-            <div class="col-md-6 mt-3">
-                <img src="/uploads/<%=home.backgound_image%>" width="100px">
-            </div>
-            <div class="col-md-6 text-justify-center mt-3">
-                Enter Developer Position : 
-                <input type="" name="position_1"  class="form-control" value="<%=home.position_1%>" ><br>
-                <input type="" name="position_2"  class="form-control" value="<%=home.position_2%>"><br>
-                <input type="" name="position_3"  class="form-control" value="<%=home.position_3%>"><br>
-            </div>
-            <div class="col-md-6 mt-3 text-center">
-                <br><br>
-                <br><br>
-                <button class="btn btn-primary">Update Home Page</button>
-            </div>
+<div class="container-fluid bg-white p-3 shadow card">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="heading">Home Section</h3>
+            <hr>
+            <form action="/admin/update_home_page" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <label class="fw-bold">Enter User Name In Short:</label>
+                        <input type="text" name="user_name_in_short" 
+                            class="border-primary form-control rounded-pill input-hover" 
+                            value="<%=home.user_name_in_short%>">
+                    </div>
+                    <div class="col-md-6 mt-3">
+                        <label class="fw-bold">Enter User Name:</label>
+                        <input type="text" name="user_name" 
+                            class="border-primary form-control rounded-pill input-hover" 
+                            value="<%=home.user_name%>">
+                    </div>
+    
+                    <div class="col-md-6 mt-3">
+                        <label class="fw-bold">Edit Background Image:</label>
+                        <input type="file" name="backgound_image" accept="image/*" 
+                            class="border-primary form-control rounded-pill input-hover">
+                    </div>
+    
+                    <div class="col-md-6 mt-3 text-center">
+                        <label class="fw-bold">Current Background Image:</label><br>
+                        <img src="/uploads/<%=home.backgound_image%>" width="120px" 
+                            class="rounded-circle shadow-lg">
+                    </div>
+    
+                    <label class="fw-bold">Enter Developer Positions:</label>
+                    <div class="col-md-4">
+                        <input type="text" name="position_1" 
+                            class="border-primary form-control rounded-pill input-hover mb-2" 
+                            value="<%=home.position_1%>">    
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="position_2" 
+                            class="border-primary form-control rounded-pill input-hover mb-2" 
+                            value="<%=home.position_2%>">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="position_3" 
+                            class="border-primary form-control rounded-pill input-hover mb-2" 
+                            value="<%=home.position_3%>">
+                    </div>
+                    <div class="col-md-12 mt-4 text-center">
+                        <button class="btn btn-primary btn-glow rounded-pill">Update Home Page</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</form>
+</div>
 <%- include("footer.ejs") %>

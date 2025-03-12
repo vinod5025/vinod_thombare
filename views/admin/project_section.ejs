@@ -1,0 +1,112 @@
+<%- include('navbar.ejs'); %>
+
+<!-- Counter Section -->
+<div class="container-fluid shadow bg-white p-4 mb-4">
+    <div class="row mb-3">
+        <h3 class="text-center fw-bold heading">Project Completed, Project Experience, Total Clients</h3>
+        <hr>
+
+    </div>
+    
+    <form action="/admin/admin_update_count_of_down_of_project_secton" method="post">
+        <div class="row g-3">
+            <!-- Project Completed -->
+            <div class="col-md-4">
+                <label class="form-label fw-semibold">Project Completed</label>
+                <input type="number" name="project_completed" class="form-control" placeholder="Enter number" required>
+            </div>
+
+            <!-- Years of Experience -->
+            <div class="col-md-4">
+                <label class="form-label fw-semibold">Years Of Experience</label>
+                <input type="number" name="y_of_exp" class="form-control" placeholder="Enter number" required>
+            </div>
+
+            <!-- Total Clients -->
+            <div class="col-md-4">
+                <label class="form-label fw-semibold">Total Clients</label>
+                <input type="number" name="total_clients" class="form-control" placeholder="Enter number" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-md-12 text-center mt-3">
+                <button type="submit" class="btn btn-primary px-4 py-2">Save Clients</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Project Form -->
+<div class="container-fluid card shadow bg-white p-3">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center fw-bold heading">Project Section</h3>
+            <hr>
+        </div>
+        <form action="/admin/save_project" method="post">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="fw-bold">Project Link</label>
+                    <input type="text" name="project_link" class="form-control border-primary rounded-pill" placeholder="Enter project link">
+                </div>
+                <div class="col-md-3">
+                    <label class="fw-bold">Project Name</label>
+                    <input type="text" name="project_name" class="form-control border-primary rounded-pill" placeholder="Enter project name">
+                </div>
+                <div class="col-md-6">
+                    <label class="fw-bold">Project Description</label>
+                    <textarea name="project_description" class="form-control border-primary rounded" rows="1" placeholder="Enter description"></textarea>
+                </div>
+                <div class="col-md-12 text-center mt-3">
+                    <button type="submit" class="btn btn-primary rounded-pill">Save Project</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- All Projects List -->
+<div class="container-fluid mt-5 mb-3 card shadow bg-white p-3">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center fw-bold heading">All Projects List</h3>
+            <hr>
+        </div>
+        <div class="col-md-12 mt-3">
+            <% if (projects.length > 0) { %>
+            <table class="table table-bordered table-striped shadow table-hover">
+                <thead class="table-primary text-center">
+                    <tr>
+                        <th>#</th>
+                        <th>Action</th>
+                        <th>Project Link</th>
+                        <th>Project Name</th>
+                        <th>Project Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% projects.map((row, i) => { %>
+                        <tr>
+                            <td class="text-center"><%= i + 1 %></td>
+                            <td class="text-center">
+                                <a href="/admin/delete_project/<%=row.id%>" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                            <td class="text-center">
+                                <a href="<%= row.project_link %>" target="_blank" class="btn btn-sm btn-outline-primary">
+                                    View
+                                </a>
+                            </td>
+                            <td><%= row.project_name %></td>
+                            <td><%= row.project_description %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            <% } else { %>
+                <p class="text-center text-muted">No projects found.</p>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>

@@ -1,88 +1,120 @@
 <%- include("navbar.ejs") %>
-<form action="/admin/update_about_page" method="post" enctype="multipart/form-data">
-    <div class="container p-4 bg-white border shadow">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="heading">Edit About Page</h3>
-            </div>
-            <div class="col-md-6 mt-3">
-                Profile Photo : 
-                <input type="file" name="profile_photo" class="form-control" accept="image/*">
-            </div>
-            <div class="col-md-6 mt-3">
-                <img src="/uploads/<%=about.profile_photo%>" width="100px" style="border-radius: 10px;" >
-            </div>
-            <div class="col-md-6 mt-3">
-                Profile Name : 
-                <input type="text" name="profile_name" class="form-control" value="<%=about.profile_name%>">
-            </div>
-            <div class="col-md-6 mt-3">
-                Profile Position : 
-                <input type="text" name="profile_position" class="form-control" value="<%=about.profile_position%>">
-            </div>
-            <div class="col-md-6 mt-3">
-                Profile Email : 
-                <input type="email" name="profile_email" class="form-control" value="<%=about.profile_email%>">
-            </div>
-            <div class="col-md-6 mt-3">
-                Profile Phone : 
-                <input type="number" name="profile_phone" class="form-control" value="<%=about.profile_phone%>">
-            </div>
+
+<div class="container-fluid card bg-white p-3 shadow">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="heading">About Section</h3>
         </div>
-        <div class="container  mt-3">
-            <div class="row">
-                <div class="col-md-12">
-                    <h3>Skills :</h3>
+        <hr>
+        <div class="col-md-12">
+            <form action="/admin/update_about" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <label class="fw-bold">Profile Photo:</label>
+                        <input type="file" accept="image/*" name="about_profile_photo" class="form-control border-primary rounded-pill ">
+                        <% if (about.about_profile_photo) { %>
+                            <img src="/uploads/<%= about.about_profile_photo %>" alt="Profile Photo" class="img-fluid mt-2" width="100">
+                        <% } %>
+                    </div>
+
+                    <div class="col-md-6 mt-3">
+                        <label class="fw-bold">Profile Name:</label>
+                        <input type="text" name="about_profile_name" class="form-control border-primary rounded-pill " value="<%= about.about_profile_name || '' %>">
+                    </div>
+
+                    <div class="col-md-4 mt-3">
+                        <label class="fw-bold">Profile Position:</label>
+                        <input type="text" name="about_profile_position" class="form-control border-primary rounded-pill " value="<%= about.about_profile_position || '' %>">
+                    </div>
+
+                    <div class="col-md-4 mt-3">
+                        <label class="fw-bold">Profile Email:</label>
+                        <input type="email" name="about_profile_email" class="form-control border-primary rounded-pill " value="<%= about.about_profile_email || '' %>">
+                    </div>
+
+                    <div class="col-md-4 mt-3">
+                        <label class="fw-bold">Profile Mobile No:</label>
+                        <input type="tel" name="about_profile_mo" class="form-control border-primary rounded-pill " value="<%= about.about_profile_mo || '' %>">
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <label class="fw-bold">Profile Summary:</label>
+                        <textarea name="about_profile_summary" rows="3" class="form-control border-primary rounded-pill "><%= about.about_profile_summary || '' %></textarea>
+                    </div>
+
+                    <div class="col-md-12 mt-4 text-center">
+                        <button type="submit" class="btn btn-primary rounded-pill">Update Profile</button>
+                    </div>
                 </div>
-                <div class="col-md-4 mt-3">
-                    <b class="text-success">HTML :</b>
-                    <input type="text" name="skill_persentage_html" class="form-control" value="<%=about.skill_persentage_html%>">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- 📊 SKILLS SECTION -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 card shadow-lg p-4">
+            <h3 class="text-center text-gradient heading">Add Your Skills</h3>
+        <hr>
+
+
+            <form action="/admin/add_skill" method="post">
+                <div class="row">
+                    <div class="col-lg-6 mt-3">
+                        <label class="fw-bold">Tech Name:</label>
+                        <input type="text" name="tech_name" class="form-control border-primary rounded-pill ">
+                    </div>
+                    <div class="col-lg-6 mt-3">
+                        <label class="fw-bold">Tech Range:</label>
+                        <input type="number" name="tech_range" min="0" max="100" class="form-control border-primary rounded-pill ">
+                    </div>
+                    <div class="col-12 text-center mt-4">
+                        <button class="btn btn-primary  rounded-pill">Add Skill</button>
+                    </div>
                 </div>
-                <div class="col-md-4 mt-3">
-                    <b class="text-success">Css :</b>
-                    <input type="text" name="skill_persentage_css" class="form-control" value="<%=about.skill_persentage_css%>">
-                </div>
-                <div class="col-md-4 mt-3">
-                    <b class="text-success">Bootstrap :</b>
-                    <input type="text" name="skill_persentage_bootstrap" class="form-control" value="<%=about.skill_persentage_bootstrap%>">
-                </div>
-                <div class="col-md-4 mt-3">
-                    <b class="text-success">JavaScript :</b>
-                    <input type="text" name="skill_persentage_javascript" class="form-control" value="<%=about.skill_persentage_javascript%>">
-                </div>
-                <div class="col-md-4 mt-3">
-                    <b class="text-success">Jquery :</b>
-                    <input type="text" name="skill_persentage_jquery" class="form-control" value="<%=about.skill_persentage_jquery%>">
-                </div>
-                <div class="col-md-4 mt-3">
-                    <b class="text-success">React :</b>
-                    <input type="text" name="skill_persentage_angular" class="form-control" value="<%=about.skill_persentage_angular%>">
-                </div> 
-                <div class="col-md-4 mt-3">
-                    <b class="text-success">Ionic :</b>
-                    <input type="text" name="skill_persentage_ionic" class="form-control" value="<%=about.skill_persentage_ionic%>">
-                </div>
-                <div class="col-md-4 mt-3">
-                    <b class="text-success">NodeJs / Express Js :</b>
-                    <input type="text" name="skill_persentage_node_express" class="form-control" value="<%=about.skill_persentage_node_express%>">
-                </div>
-                <div class="col-md-4 mt-3">
-                    <b class="text-success">Mysql :</b>
-                    <input type="text" name="skill_persentage_mysql" class="form-control" value="<%=about.skill_persentage_mysql%>">
-                </div>
-                <div class="col-md-6 mt-3">
-                <b class="text-success"> Profile User Description :</b>
-                    <textarea type="text" name="profile_user_desc"  rows="1" class="form-control">
-                       <%=about.profile_user_desc%>
-                    </textarea>
-                </div>
-                <div class="col-md-6 mt-3 text-center">
-                    <br>
-                    <button class="btn btn-primary">Save About Page</button>
-                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- 📊 Display Skills -->
+<div class="container-fluid mt-5 shadow card p-3 table-responsive">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="heading text-center">All Skills</h3>
+        <hr>
+        </div>
+            <div class="col-lg-12 ">
+                <table class="table table-hover text-center ">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Action</th>
+                            <th>Technology</th>
+                            <th>Proficiency (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% skills.forEach(skill => { %>
+                            <tr>
+                                <td>
+                                <a href="/admin/edit_skill/<%=skill.id%>">
+                                    <button class="btn btn-secondary m-2">Edit</button>
+                                </a>
+                                <a href="/admin/delete_skill/<%=skill.id%>">
+                                    <button class="btn btn-danger" onclick="return confirm('Are You Sure..!')">Del</button></td>
+                                </a>
+                                <td><strong><%= skill.tech_name %></strong></td>
+                                <td><span class="badge bg-primary rounded-pill"><%= skill.tech_range %>%</span></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-</form>
-<%- include("footer.ejs") %>
+</div>
 
+
+<%- include("footer.ejs") %>

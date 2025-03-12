@@ -1,46 +1,69 @@
 <%- include("navbar.ejs") %>
-<form action="/admin/update_client_list" method="post" enctype="multipart/form-data">
-    <div class="container p-4 bg-white border shadow">
+
+<form action="/admin/add_client" method="post" enctype="multipart/form-data">
+    <div class="container p-4 bg-white card border shadow">
         <div class="row">
-         <div class="col-md-12 mt-3">
-             <h3 class="heading">Client List</h3>
-         </div>
-         <div class="col-md-6 mt-3">
-             <h4 class="text-primary">Client 1</h4>
-            <b class="text-success"> Image :</b>
-             <input type="file" name="client_photo_1" required class="form-control" accept="image/*">
-         </div>
-         <div class="col-md-6 mt-3">
-            <img src="/uploads/<%=client_list.client_photo_1%>" width="100px">
-         </div>
-         <div class="col-md-6 mt-3">
-             <b class="text-success">Client 1 Name</b>
-             <input name="client_name_1" class="form-control" rows="1" value="<%=client_list.client_name_1%>">
-         </div>
-         <div class="col-md-6 mt-3">
-             <b class="text-success">Client 1 Information</b>
-             <textarea name="client_inform_1" class="form-control" rows="1"><%=client_list.client_inform_1%></textarea>
-         </div>
-         <div class="col-md-6 mt-3">
-             <h4 class="text-primary">Client 2</h4>
-            <b class="text-success"> Image :</b>
-             <input type="file" name="client_photo_2" required class="form-control" accept="image/*">
-         </div>
-         <div class="col-md-6 mt-3">
-            <img src="/uploads/<%=client_list.client_photo_2%>" width="100px">
-         </div>
-         <div class="col-md-6 mt-3">
-             <b class="text-success">Client 2 Name</b>
-             <input name="client_name_2" class="form-control" rows="1" value="<%=client_list.client_name_2%>">
-         </div>
-         <div class="col-md-6 mt-3">
-             <b class="text-success">Client 2 Information</b>
-             <textarea name="client_inform_2" class="form-control" rows="1"><%=client_list.client_inform_2%></textarea>
-         </div>
-         <div class="col-md-12 mt-3 text-center">
-             <button class="btn btn-primary">Save Clients</button>
-         </div>
+            <div class="col-md-12 mt-3">
+                <h3 class="heading">Client Information</h3>
+                <hr>
+            </div>
+
+            <!-- Client Image Upload -->
+            <div class="col-md-4 mt-3">
+                <b class="text-success">Image:</b>
+                <input type="file" name="client_photo"  class="form-control" accept="image/*">
+            </div>
+
+            <!-- Client Name -->
+            <div class="col-md-4 mt-3">
+                <b class="text-success">Client Name</b>
+                <input name="client_name" class="form-control">
+            </div>
+
+            <!-- Client Information -->
+            <div class="col-md-4 mt-3">
+                <b class="text-success">Client Information</b>
+                <textarea name="client_inform" class="form-control" rows="1"></textarea>
+            </div>
+
+            <!-- Save Button -->
+            <div class="col-md-12 mt-4 text-center">
+                <button class="btn btn-primary">Save Client</button>
+            </div>
         </div>
-     </div>
+    </div>
 </form>
+
+<div class="container mt-5 mb-5 card shadow bg-white p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="heading">All Client List</h3>
+            <hr>
+        </div>
+        <div class="col-md-12 mt-3">
+            <table class="table table-hover ">
+                <tr>
+                    <th>Action</th>
+                    <th>Sr.No.</th>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Caption</th>
+                </tr>
+                <% client_list.map((row,i)=>{ %>
+                    <tr>
+                        <td>
+                            <a href="/admin/delete_client/<%=row.id%>">
+                                <button class="btn btn-danger" onclick="return confirm('Are You Sure...!')">Del</button>
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><img src="/uploads/<%=row.client_photo%>" width="100px">%></td>
+                        <td><%=row.client_name%></td>
+                        <td><%=row.client_inform%></td>
+                    </tr>
+                    <% }) %>
+            </table>
+        </div>
+    </div>
+</div>
 <%- include("footer.ejs") %>
