@@ -15,15 +15,18 @@ router.get("/",async function(req,res){
     res.render("user/home.ejs",obj)
 });
 router.post("/contact_now", async function (req, res) {
-   
-        var d = req.body;
-        var date = new Date().toISOString().slice(0, 10).split("-").reverse().join("-");
-        var time = new Date().toLocaleTimeString();
-        var sql = `INSERT INTO contact (name, email, mobile, subject, message, date, time) 
-                   VALUES (?, ?, ?, ?, ?, ?, ?)`;
-        await exe(sql, [d.name, d.email, d.mobile, d.subject, d.message, date, time]);
-        res.redirect("/");
+    var d = req.body;
+    var date = new Date().toISOString().slice(0, 10).split("-").reverse().join("-");
+
+    // Convert time to 24-hour format
+    var time = new Date().toLocaleTimeString("en-GB"); // "HH:MM:SS"
+
+    var sql = `INSERT INTO contact (name, email, mobile, subject, message, date, time) 
+               VALUES (?, ?, ?, ?, ?, ?, ?)`;
     
+    await exe(sql, [d.name, d.email, d.mobile, d.subject, d.message, date, time]);
+    res.redirect("/");
 });
+
 
 module.exports=router;
